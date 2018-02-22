@@ -1,0 +1,133 @@
+<html>
+<head>
+</head>
+<body>
+ <form>
+      Problem: <select name = "type" id="problem" onchange="subProblem()" style="margin-top: 10px">
+   <option >Select</option>
+   <option >Printer</option>
+   <option >Operating System</option>
+   <option >Software</option>
+   <option >Hardware</option>
+</select > 
+       &nbsp;  &nbsp; Sub Problem: <select name = "subtype" id="subproblem">
+   <option id ="nosubproblem">No Sub Problem</option>
+   
+</select><br>
+    <div class="container" style="margin-right: : 300px;margin-top: 10px">
+  <label> Problem commentary:</label>
+  <form>
+    <div class="form-group">
+      <textarea class="form-control" rows="10" style="max-width: : 1000px" id="comment"></textarea>
+    </div>
+  </form>
+</div>
+    
+     
+    </form>
+	<script>
+
+             
+         function subProblem()
+                {
+           
+           removeOptions(document.getElementById("subproblem"));
+           
+           var content = {printer : ["Select","Printing","Printer Software","Printer Que Cancellation"],operatingSystem:["Select","Drivers","Blue Screen"],hardware:["Select","Screen","Hard Drive"],software:["No Sub Problem"],select:["No Sub Problem"]}
+       
+             var e = document.getElementById("problem");
+           var select = document.getElementById("subproblem"); 
+             var strUser = e.options[e.selectedIndex].text;
+      if (strUser=="Printer"){     
+         for(var i = 0; i < content.printer.length; i++)
+
+             {
+
+                 var option = document.createElement("OPTION"),
+
+                     txt = document.createTextNode(content.printer[i]);
+
+                 option.appendChild(txt);
+
+                 option.setAttribute("value",content.printer[i]);
+
+                 select.insertBefore(option,select.lastChild);
+
+             }
+      }
+      if (strUser=="Operating System"){    
+         for(var i = 0; i < content.operatingSystem.length; i++)
+
+             {
+
+                 var option = document.createElement("OPTION"),
+
+                     txt = document.createTextNode(content.operatingSystem[i]);
+
+                 option.appendChild(txt);
+
+                 option.setAttribute("value",content.operatingSystem[i]);
+
+                 select.insertBefore(option,select.lastChild);
+
+             }
+      }
+        else if (strUser=="Hardware"){     
+         for(var i = 0; i < content.hardware.length; i++)
+
+             {
+
+                 var option = document.createElement("OPTION"),
+
+                     txt = document.createTextNode(content.operatingSystem[i]);
+
+                 option.appendChild(txt);
+
+                 option.setAttribute("value",content.operatingSystem[i]);
+
+                 select.insertBefore(option,select.lastChild);
+
+             }
+      }
+            else if (strUser=="Software"){     
+         for(var i = 0; i < content.software.length; i++)
+
+             {
+
+                 var option = document.createElement("OPTION"),
+
+                     txt = document.createTextNode(content.software[i]);
+
+                 option.appendChild(txt);
+
+                 option.setAttribute("value",content.software[i]);
+
+                 select.insertBefore(option,select.lastChild);
+
+             }
+      }
+            else if (strUser=="Select"){     
+         for(var i = 0; i < content.select.length; i++)
+
+             {
+
+                 var option = document.createElement("OPTION"),
+
+                     txt = document.createTextNode(content.select[i]);
+
+                 option.appendChild(txt);
+
+                 option.setAttribute("value",content.select[i]);
+
+                 select.insertBefore(option,select.lastChild);
+
+             }
+      }
+
+         }
+	
+
+</script>
+</body>
+
+</html>

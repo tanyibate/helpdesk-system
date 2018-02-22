@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #A8A8A8;
+    overflow-x: hidden;
+    padding-top: 50px;
+}
+
+.sidenav a {
+    padding: 6px 6px 6px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #000000;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.main {
+    text-align: center;
+	padding-left: 250px; /* Same as the width of the sidenav */
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 40px;}
+  .sidenav a {font-size: 18px;}
+}
+
+h1 {
+	font-size: 40px;
+}
+
+.imgcontainer {
+	padding-left: 90%;
+}
+
+.inputs {
+	margin-left:auto;
+	margin-right:auto;
+	font-size: 15px;
+}
+
+table, th {
+	padding-top:20px;
+    text-align: center;
+    width: 100%; 
+    margin: auto;	
+}
+
+td {
+	border: 2px solid #A9A9A9;
+	vertical-align: top; 
+	padding-bottom: 25px;
+}
+
+
+
+</style>
+
+<title>New Call</title>
+
+</head>
+<body onload="myFunction()">
+
+<div class="sidenav">
+  <a href="HomePage.html">Home Page</a> <br>
+  <a href="NewCall.html">New Call</a> <br>
+  <a href="ProblemsArchive.html">Problems Archive</a> <br>
+  <a href="http://213.251.43.103/TechnicalSpecialists.php">Techical Specialists</a> 
+</div>
+
+<div class="main">
+	
+	<table>
+		<tr>
+			<td><h1 class="headings">New Call</h1>
+				<div id="NewCall">	
+				
+					<form action="newcall.php" method="post">
+						
+						<div class="inputs">
+							
+							<label>Helpdesk Operator ID: </label>
+							<input type="text" name="operatorID" value="8733"/>
+							<br><br>
+							
+							<label> Name of Employee:</label>
+							<input type="text" name="ename"/>
+							<br><br>
+							
+							<label> Date:</label>
+							<input type="text" id="date" name="date"/>		
+							<br><br>
+							
+							<label>Time: </label>
+							<input type="text" id="demo" name="usr_time"/>
+
+							<script>
+								function myFunction() {
+								var str= Date();
+								var res = document.getElementById('demo').value= str.substring(16, 24);
+								var date = str.getDate();
+								var month = str.getMonth()+1;
+								var year = str.getFullYear();
+								var wholedate = year;
+								var dates = document.getElementById('date').value= wholedate;
+								}
+							</script>
+							<br><br>
+							
+							<label style="vertical-align:top;">Reason for call: </label>
+							<textarea name="reason" rows="2" cols="35"></textarea>
+							<br><br>
+						
+						</div>	
+						
+						<div class="button">
+							<button type="submit">Log Call</button> 
+							<button type="reset">Reset</button>
+						</div>
+						
+					</form>		
+				</div>
+			</td>
+				
+			<td><h1 class="headings">Caller Details</h1>
+				<div id="CallerDetails">
+					<form action="retrievedetails.php" method="post">					
+						<input type="text" name="cID" placeholder="Enter Caller's full name"/>
+						<button type="submit">Retrieve Details</button>
+					</form>	
+				</div>
+			</td>			 			   
+										
+		</tr> 
+		<tr>
+			<td colspan="2"><h1 class="headings">New Problem</h1>
+				<div id="NewProblem"> 
+							
+					<form action="newproblem.php" method="post">
+
+						<div class="inputs">
+										
+							<label>Problem ID</label>
+							<input type="text" name="problemID" value="4596" style="width:40px;height:20px;"/>
+							<br><br>
+							
+							<label>Call ID</label>
+							<input type="text" name="callID" value="4387" style="width:40px;height:20px;"/>
+							<br><br>
+							
+							<label>Problem Type</label>
+							<select name="type">
+								<option value="printer">Printer</option>
+								<option value="os">Operating system</option>
+							    <option value="monitor">Monitor</option>
+								<option value="accsoftware">Accounting software</option>
+							</select>
+							<br><br>
+							
+							<label>Sub-Type</label>
+							<select name="subtype">
+								<option value="hardware">Hardware</option>
+								<option value="queue">Queue</option>
+							    <option value="colour">Colour Scheme</option>
+								<option value="scaling">Scaling</option>
+							</select>
+							<br><br>
+							
+							<label style="vertical-align:top;">Problem details: </label>
+							<textarea name="details" rows="2" cols="35"></textarea>
+							<br><br>
+							
+						</div>
+						
+						<div class="button">
+							<button type="submit">Log Problem</button>
+						</div>
+					</form>
+				</div>
+			</td>
+				
+		</tr>
+	</table>
+</div>
+</body>
+</html> 

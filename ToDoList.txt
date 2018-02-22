@@ -1,0 +1,15 @@
+ 
+!!! Create page to update problems (form with call ID) !!!
+- Comment everything 
+- Code source
+- Font size
+- Validate inputs
+- Synchronize call ID with problem ID
+- Pop up messages
+
+- Check Report
+- Correct automatic assignment
+
+- Technical Specialists / Hardware and Software appearing in newcall.php????
+
+	

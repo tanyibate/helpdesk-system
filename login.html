@@ -1,0 +1,101 @@
+<!-- Login form with username and password input forms and login and text size buttons -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>	
+
+h1 {
+	text-align: center;
+	font-size: 300%;
+	}
+
+form {
+    border: 3px solid #f1f1f1;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 2px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    cursor: pointer;
+    width: 100%;
+	border: 0.5px solid black;
+    border-radius: 20px; 
+    box-shadow: 0 3px #999; 
+}
+
+#FS {
+	display: block;
+    background-color: #51A6d0;
+    padding: 14px 20px;
+    border: 0.5px solid black;
+    border-radius: 20px; 
+    box-shadow: 0 3px #999;      
+    text-align: center;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+img.avatar {
+    width: 20%;
+    border-radius: 50%;
+}
+
+.container {
+	padding: 10px 250px 10px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+<title>Log in</title>
+
+</style>
+</head>
+<body>		
+    
+	<h1>Welcome to Make-It-All</h1> 	
+	
+	<!-- Login form linking to php file when button clicked -->
+	
+	<form action="login.php" method="post">
+  		<div class="imgcontainer">
+    		<img src="Make-it-all-logo.PNG" alt="Avatar" class="avatar">
+  		</div>
+		
+		<!-- Input forms for username and password and buttons 
+		Input fields can't be left blank (required)-->
+		
+  		<div class="container">
+    		<label><b>Username</b></label>
+    		<input type="text" name="uname" placeholder="Enter Username"  required>
+
+    		<label><b>Password</b></label>
+    		<input type="password" name="psw" placeholder="Enter Password"  required>
+        
+    		<button type="submit" onclick="">Login</button> 		
+  		</div>
+	</form>
+
+  </body>
+</html>
